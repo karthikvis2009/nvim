@@ -49,32 +49,24 @@ elseif vim.bo.filetype == "python" then
 end
 
 
--- LSP
-vim.wo.signcolumn = 'yes'
---vim.diagnostic.set(0, {severity = vim.diag
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    virtual_text = {
-      severity = vim.diagnostic.severity.ERROR,
-      wrap = true
-    },
-    underline = {
-      severity = vim.diagnostic.severity.ERROR
-    },
+-- LSP Diagnostics
+vim.diagnostic.config({
     signs = {
-      severity = vim.diagnostic.severity.ERROR
+        text = {
+            [vim.diagnostic.severity.ERROR] = '󰅚 ',
+            [vim.diagnostic.severity.WARN] = '󰀪 ',
+            [vim.diagnostic.severity.HINT] = '󰌶 ',
+            [vim.diagnostic.severity.INFO] = ' ',
+        },
+        linehl = {
+            [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+        },
+        numhl = {
+            [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+        },
+        severity = vim.diagnostic.severity.ERROR,
+        },
+    underline = {
+        severity = vim.diagnostic.severity.ERROR
     }
-    -- signs = {
-    -- numhl = {
-    --         [vim.diagnostic.severity.ERROR] = 'ErrorMsg'
-    --      }
-    -- }
-  }
-)
-local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
-vim.g.lsp_signs_enable = 1
-vim.g.lsp_inlay_hints_enabled = 1
+})

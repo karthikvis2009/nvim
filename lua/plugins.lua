@@ -187,8 +187,11 @@ require("lazy").setup({
     
     -- Git
     {
-        "https://github.com/NeogitOrg/neogit",
         "NeogitOrg/neogit",
+
+        dependencies = {
+            "sindrets/diffview.nvim",
+        },
 
         init = function()
             require("config.neogitconfig")
