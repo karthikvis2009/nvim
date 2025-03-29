@@ -68,5 +68,9 @@ vim.diagnostic.config({
         },
     underline = {
         severity = vim.diagnostic.severity.ERROR
+    },
+    virtual_text = {
+        severity = vim.diagnostic.severity.ERROR,
+        wrap = true
     }
 })
