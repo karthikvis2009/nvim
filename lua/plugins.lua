@@ -196,6 +196,11 @@ require("lazy").setup({
         init = function()
             require("config.neogitconfig")
         end,
+    },
+
+    --Yuck filetype
+    {
+        "elkowar/yuck.vim",
     }
 
 })

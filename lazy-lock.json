@@ -33,5 +33,6 @@
   "tree-sitter-latex": { "branch": "master", "commit": "7b06f6ed394308e7407a1703d2724128c45fc9d7" },
   "tree-sitter-markdown": { "branch": "split_parser", "commit": "413285231ce8fa8b11e7074bbe265b48aa7277f9" },
   "vim-commentary": { "branch": "master", "commit": "64a654ef4a20db1727938338310209b6a63f60c9" },
-  "vimtex": { "branch": "master", "commit": "bcb14eb6e3739f0c1902115a710292bc37c62d2e" }
+  "vimtex": { "branch": "master", "commit": "bcb14eb6e3739f0c1902115a710292bc37c62d2e" },
+  "yuck.vim": { "branch": "master", "commit": "9b5e0370f70cc30383e1dabd6c215475915fe5c3" }
 }
