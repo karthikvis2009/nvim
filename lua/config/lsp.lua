@@ -84,3 +84,7 @@ end
 lspconfig.foam_ls.setup({
     on_attach = on_attach,
 })
+
+lspconfig.bashls.setup({
+	on_attach = on_attach,
+})

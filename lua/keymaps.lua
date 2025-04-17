@@ -52,10 +52,6 @@ local function set_keymap()
         vim.keymap.set('i', '{', '{}<esc>i', { buffer = true, noremap = true, silent = true})
         vim.keymap.set('n', '<space><CR>', ':!python3 %<CR>', {buffer = true, noremap = true, silent = true})
 
-    -- elseif vim.bo.filetype == "sh" then
-    --     vim.keymap.set('i', '{', '{<esc>o<CR>}<esc>%<CR>a', { buffer = true, noremap = true, silent = true })
-    --     vim.keymap.set('n', '<space><CR>', ':!./%<CR>', {buffer = true, noremap = true, silent = true})
-
     else
         vim.keymap.set('i', '{', '{}<esc>i', { buffer = true, noremap = true, silent = true})
     end
@@ -79,8 +75,8 @@ vim.keymap.set('v', '<C-w>w', '<esc>:wq<CR>', opts)
 vim.keymap.set('i', '<C-w>w', '<esc>:wq<CR>', opts)
 
 -- LSP error mappings
-vim.keymap.set('n', '<C-Left>', ':lua vim.diagnostic.goto_next({severity=vim.diagnostic.severity.ERROR, wrap = true})<CR>')
-vim.keymap.set('n', '<C-Right>', ':lua vim.diagnostic.goto_prev({severity=vim.diagnostic.severity.ERROR, wrap = true})<CR>')
+vim.keymap.set('n', '<C-Left>', ':lua vim.diagnostic.goto_next({severity=vim.diagnostic.severity.ERROR, wrap = true})<CR><CR>')
+vim.keymap.set('n', '<C-Right>', ':lua vim.diagnostic.goto_prev({severity=vim.diagnostic.severity.ERROR, wrap = true})<CR><CR>')
 
 -- Neogit
 vim.keymap.set('n', '<space>gg', ':lua require("neogit").open({ kind = "vsplit"})<CR>')
