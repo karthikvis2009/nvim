@@ -10,7 +10,7 @@ require('mason').setup({
 
 require('mason-lspconfig').setup({
     -- A list of servers to automatically install if they're not already installed
-    ensure_installed = { 'pylsp', 'lua_ls', 'clangd', 'texlab', 'foam_ls'},
+    ensure_installed = { 'pylsp', 'lua_ls', 'clangd', 'texlab'}--, 'foam_ls'},
 })
 
 -- Set different settings for different languages' LSP
@@ -68,7 +68,11 @@ lspconfig.lua_ls.setup({
 })
 
 lspconfig.clangd.setup({
-	on_attach = on_attach,
+    cmd = { "clangd", "--background-index", "--clang-tidy" },
+    root_dir = lspconfig.util.root_pattern(".clangd", "compile_commands.json", ".git"),
+    on_attach = function(client, bufnr)
+    -- Optional keybindings or LSP hooks
+    end,
 })
 
 lspconfig.texlab.setup({
@@ -81,9 +85,9 @@ if vim.bo.filetype == "tex" then
     })
 end
 
-lspconfig.foam_ls.setup({
-    on_attach = on_attach,
-})
+-- lspconfig.foam_ls.setup({
+--     on_attach = on_attach,
+-- })
 
 lspconfig.bashls.setup({
 	on_attach = on_attach,

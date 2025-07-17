@@ -30,6 +30,9 @@ vim.opt.showmode = false
 vim.opt.incsearch = true
 vim.opt.hlsearch = true
 
+
+vim.opt.conceallevel = 2
+
 -- Spell checking
 vim.api.nvim_create_autocmd("FileType", {
     pattern = {"tex","md"},
@@ -55,8 +58,9 @@ vim.diagnostic.config({
         text = {
             [vim.diagnostic.severity.ERROR] = '󰅚 ',
             [vim.diagnostic.severity.WARN] = '󰀪 ',
-            [vim.diagnostic.severity.HINT] = '󰌶 ',
+            -- [vim.diagnostic.severity.HINT] = '󰌶 ',
             [vim.diagnostic.severity.INFO] = ' ',
+            severity = vim.diagnostic.severity.ERROR
         },
         linehl = {
             [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
@@ -74,3 +78,10 @@ vim.diagnostic.config({
         wrap = true
     }
 })
+
+-- Neovim different default font size
+
+if vim.env.TERM == "xterm-kitty" then
+    vim.opt.guifont = "JetBrains Mono NF:12"
+end
+

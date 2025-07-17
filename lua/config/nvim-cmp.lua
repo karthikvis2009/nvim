@@ -8,6 +8,8 @@ local luasnip = require("luasnip")
 local lspkind = require('lspkind')
 local cmp = require("cmp")
 
+cmp.register_source('custom_foam', require('config.ofCMP'))
+
 cmp.setup({
     mapping = cmp.mapping.preset.insert({
         -- Use <C-b/f> to scroll the docs
@@ -102,22 +104,23 @@ cmp.setup({
     })
   },
 
-  -- Set source precedence
-  sources = cmp.config.sources({
-      { name = 'luasnip'},     -- For luasnip user
-      { name = 'nvim_lsp' },    -- For nvim-lsp
-      { name = 'render-markdown'}, -- For markdown
-      { name = 'buffer'},      -- For buffer word completion
-      { name = 'path' },        -- For path completion
-  }),
-
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
-            require('notify')(args)
+            -- require('notify')(args)
             require("luasnip").lsp_expand(args.body)
         end,
     },
+
+    -- Set source precedence
+    sources = cmp.config.sources({
+        { name = 'custom_foam'},    -- Custom source for openfoam
+        { name = 'luasnip'},     -- For luasnip user
+        { name = 'nvim_lsp' },    -- For nvim-lsp
+        { name = 'render-markdown'}, -- For markdown
+        { name = 'buffer'},      -- For buffer word completion
+        { name = 'path' },        -- For path completion
+    }),
 
 })
 

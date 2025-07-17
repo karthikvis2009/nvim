@@ -7,12 +7,12 @@ ts_config.setup({
   	  	  	lookahead = true,
 			-- iF and aF families for selecting text objects
   	  	  	keymaps = {
-  	  	  		-- v keymaps are for key-values
-  	  	  	  	["av"] = "@function.outer",
-  	  	  	  	["iv"] = "@function.inner",
+  	  	  		-- q keymaps are for key-values
+  	  	  	  	[";w"] = "@function.outer",
+  	  	  	  	["'w"] = "@function.inner",
 				-- c keymaps are for dictionaries
-  	  	  	  	["ac"] = "@class.outer",
-  	  	  	  	["ic"] = "@class.inner",
+  	  	  	  	["[w"] = "@class.outer",
+  	  	  	  	["]w"] = "@class.inner",
 				-- k keymaps are for comments
   	  	  	  	["ak"] = "@comment.outer",
   	  	  	  	["ik"] = "@comment.inner",

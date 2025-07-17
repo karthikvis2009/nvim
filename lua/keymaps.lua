@@ -81,4 +81,8 @@ vim.keymap.set('n', '<C-Right>', ':lua vim.diagnostic.goto_prev({severity=vim.di
 -- Neogit
 vim.keymap.set('n', '<space>gg', ':lua require("neogit").open({ kind = "vsplit"})<CR>')
 
+-- Disable clangd
+vim.keymap.set('n', ',,', '<esc>:LspStop clangd<CR>', opts)
+
+
 

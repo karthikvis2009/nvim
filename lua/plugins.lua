@@ -201,6 +201,19 @@ require("lazy").setup({
     --Yuck filetype
     {
         "elkowar/yuck.vim",
+    },
+
+    --Obsidian 
+    {
+         "epwalsh/obsidian.nvim",
+          dependencies = {
+            -- Required.
+            "nvim-lua/plenary.nvim",
+          },
+
+          init = function()
+              require("config.obsidian")
+          end,
     }
 
 })
