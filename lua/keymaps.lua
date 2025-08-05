@@ -74,6 +74,13 @@ vim.keymap.set('n', '<C-w>w', '<esc>:wq<CR>', opts)
 vim.keymap.set('v', '<C-w>w', '<esc>:wq<CR>', opts)
 vim.keymap.set('i', '<C-w>w', '<esc>:wq<CR>', opts)
 
+-- Obsidian keymaps
+vim.keymap.set('n', ';q', '<esc>:ObsidianSearch<CR>', opts)
+vim.keymap.set('n', ';t', '<esc>:ObsidianTags<CR>', opts)
+vim.keymap.set('n', ';b', '<esc>:ObsidianBacklinks<CR>', opts)
+vim.keymap.set('n', ';d', '<esc>:ObsidianDailies<CR>', opts)
+vim.keymap.set('n', ';e', '<esc>:ObsidianNew<CR>', opts)
+
 -- LSP error mappings
 vim.keymap.set('n', '<C-Left>', ':lua vim.diagnostic.goto_next({severity=vim.diagnostic.severity.ERROR, wrap = true})<CR><CR>')
 vim.keymap.set('n', '<C-Right>', ':lua vim.diagnostic.goto_prev({severity=vim.diagnostic.severity.ERROR, wrap = true})<CR><CR>')

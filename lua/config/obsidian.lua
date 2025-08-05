@@ -10,13 +10,17 @@ require("obsidian").setup(
     {
       name = "personal",
       path = "~/Documents/Vault/personal",
+
+      overrides = {
+          notes_subdir = "personal/notes",
+      },
     },
     {
       name = "work",
       path = "~/Documents/Vault/work",
       -- Optional, override certain settings.
       overrides = {
-        notes_subdir = "notes",
+        notes_subdir = "work/notes",
       },
     },
   },
@@ -101,7 +105,8 @@ require("obsidian").setup(
         suffix = suffix .. string.char(math.random(65, 90))
       end
     end
-    return tostring(os.time()) .. "-" .. suffix
+    -- return tostring(os.time()) .. "-" .. suffix
+    return suffix
   end,
 
   -- Optional, customize how note file names are generated given the ID, target directory, and title.
@@ -143,7 +148,11 @@ require("obsidian").setup(
       note:add_alias(note.title)
     end
 
-    local out = { id = note.id, aliases = note.aliases, tags = note.tags }
+
+  -- Get current date in ISO 8601 format (e.g., "2025-07-23")
+    local date = os.date("%d-%m-%Y")
+
+    local out = { id = note.id, aliases = note.aliases, tags = note.tags, date = date}
 
     -- `note.metadata` contains any manually added fields in the frontmatter.
     -- So here we just make sure those fields are kept in the frontmatter.

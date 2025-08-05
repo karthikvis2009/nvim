@@ -85,3 +85,30 @@ if vim.env.TERM == "xterm-kitty" then
     vim.opt.guifont = "JetBrains Mono NF:12"
 end
 
+
+vim.defer_fn(function()
+    vim.api.nvim_set_hl(0, 'RenderMarkdownH1', { fg = '#08EF63', bg = '#1A1A1A', bold = true })
+    vim.api.nvim_set_hl(0, 'RenderMarkdownH1Bg', { fg = '#B50862', bg = '#2E2E2E', bold = true })
+
+    vim.api.nvim_set_hl(0, 'RenderMarkdownH2', { fg = '#08EF63', bg = '#1A1A1A', bold = true })
+    vim.api.nvim_set_hl(0, 'RenderMarkdownH2Bg', { fg = '#08B562', bg = '#2E2E2E', bold = true })
+
+    vim.api.nvim_set_hl(0, 'RenderMarkdownH3', { fg = '#08EF63', bg = '#1A1A1A', bold = true })
+    vim.api.nvim_set_hl(0, 'RenderMarkdownH3Bg', { fg = '#0862B5', bg = '#2E2E2E', bold = true })
+
+    vim.api.nvim_set_hl(0, 'RenderMarkdownH4', { fg = '#08EF63', bg = '#1A1A1A', bold = true })
+    vim.api.nvim_set_hl(0, 'RenderMarkdownH4Bg', { fg = '#B56208', bg = '#2E2E2E', bold = true })
+
+    vim.api.nvim_set_hl(0, 'RenderMarkdownH5', { fg = '#08EF63', bg = '#1A1A1A', bold = true })
+    vim.api.nvim_set_hl(0, 'RenderMarkdownH5Bg', { fg = '#62B508', bg = '#2E2E2E', bold = true })
+
+    vim.api.nvim_set_hl(0, 'RenderMarkdownH6', { fg = '#08EF63', bg = '#1A1A1A', bold = true })
+    vim.api.nvim_set_hl(0, 'RenderMarkdownH6Bg', { fg = '#6208B5', bg = '#2E2E2E', bold = true })
+
+--     vim.api.nvim_set_hl(0, 'RenderMarkdownH2', { fg = '#F1FA8C', bg = 'NONE', bold = true })
+--     vim.api.nvim_set_hl(0, 'RenderMarkdownH3', { fg = '#8BE9FD', bg = 'NONE' })
+--     vim.api.nvim_set_hl(0, 'RenderMarkdownH4', { fg = '#50FA7B', bg = 'NONE' })
+--     vim.api.nvim_set_hl(0, 'RenderMarkdownH5', { fg = '#BD93F9', bg = 'NONE' })
+--     vim.api.nvim_set_hl(0, 'RenderMarkdownH6', { fg = '#FF79C6', bg = 'NONE' })
+--     -- Add more as needed
+end, 100)
