@@ -13,3 +13,9 @@ vim.filetype.add({
     ["functions"] = "foam",
   }
 })
+
+
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+  pattern = "*csv",
+  command = "CsvViewEnable"
+})

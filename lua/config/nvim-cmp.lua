@@ -8,7 +8,7 @@ local luasnip = require("luasnip")
 local lspkind = require('lspkind')
 local cmp = require("cmp")
 
-cmp.register_source('custom_foam', require('config.ofCMP'))
+-- cmp.register_source('custom_foam', require('config.ofCMP'))
 
 cmp.setup({
     mapping = cmp.mapping.preset.insert({

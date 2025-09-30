@@ -45,13 +45,7 @@ neogit.setup {
   -- Scope persisted settings on a per-project basis
   use_per_project_settings = true,
   -- Table of settings to never persist. Uses format "Filetype--cli-value"
-  ignored_settings = {
-    "NeogitPushPopup--force-with-lease",
-    "NeogitPushPopup--force",
-    "NeogitPullPopup--rebase",
-    "NeogitCommitPopup--allow-empty",
-    "NeogitRevertPopup--no-edit",
-  },
+  ignored_settings = {},
   -- Configure highlight group features
   highlight = {
     italic = true,
@@ -72,6 +66,14 @@ neogit.setup {
   initial_branch_name = "",
   -- Change the default way of opening neogit
   kind = "tab",
+  -- Floating window style 
+  floating = {
+    relative = "editor",
+    width = 0.8,
+    height = 0.7,
+    style = "minimal",
+    border = "rounded",
+  },
   -- Disable line numbers
   disable_line_numbers = true,
   -- Disable relative line numbers
@@ -138,12 +140,6 @@ neogit.setup {
   merge_editor = {
     kind = "auto",
   },
-  description_editor = {
-    kind = "auto",
-  },
-  tag_editor = {
-    kind = "auto",
-  },
   preview_buffer = {
     kind = "floating_console",
   },
@@ -182,6 +178,11 @@ neogit.setup {
     -- is also selected then telescope is used instead
     -- Requires you to have `echasnovski/mini.pick` installed.
     mini_pick = nil,
+
+    -- If enabled, uses snacks.picker for menu selection. If the telescope integration
+    -- is also selected then telescope is used instead
+    -- Requires you to have `folke/snacks.nvim` installed.
+    snacks = nil,
   },
   sections = {
     -- Reverting/Cherry Picking
@@ -274,6 +275,7 @@ neogit.setup {
       ["<down>"] = "Next",
       ["<up>"] = "Previous",
       ["<tab>"] = "InsertCompletion",
+      ["<c-y>"] = "CopySelection",
       ["<space>"] = "MultiselectToggleNext",
       ["<s-space>"] = "MultiselectTogglePrevious",
       ["<c-j>"] = "NOP",
@@ -318,6 +320,8 @@ neogit.setup {
       ["4"] = "Depth4",
       ["Q"] = "Command",
       ["<tab>"] = "Toggle",
+      ["za"] = "Toggle",
+      ["zo"] = "OpenFold",
       ["x"] = "Discard",
       ["s"] = "Stage",
       ["S"] = "StageUnstaged",

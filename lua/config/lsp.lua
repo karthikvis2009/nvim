@@ -18,7 +18,6 @@ require('mason-lspconfig').setup({
 -- How to use setup({}): https://github.com/neovim/nvim-lspconfig/wiki/Understanding-setup-%7B%7D
 --     - the settings table is sent to the LSP
 --     - on_attach: a lua callback function to run after LSP attaches to a given buffer
-local lspconfig = require('lspconfig')
 
 -- Customized on_attach function
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -59,36 +58,35 @@ end
 -- How to add LSP for a specific language?
 -- 1. use `:Mason` to install corresponding LSP
 -- 2. add configuration below
-lspconfig.pylsp.setup({
+vim.lsp.config("pylsp", {
 	on_attach = on_attach,
 })
 
-lspconfig.lua_ls.setup({
+vim.lsp.config("lua_ls", {
 	on_attach = on_attach,
 })
 
-lspconfig.clangd.setup({
+vim.lsp.config("clangd", {
     cmd = { "clangd", "--background-index", "--clang-tidy" },
-    root_dir = lspconfig.util.root_pattern(".clangd", "compile_commands.json", ".git"),
+    root_dir = require("lspconfig.util").root_pattern(".clangd", "compile_commands.json", ".git"),
     on_attach = function(client, bufnr)
     -- Optional keybindings or LSP hooks
     end,
 })
 
-lspconfig.texlab.setup({
+vim.lsp.config("texlab", {
 	on_attach = on_attach,
 })
 
+vim.lsp.config("bashls", {
+	on_attach = on_attach,
+})
 if vim.bo.filetype == "tex" then
-    lspconfig.typos_lsp.setup({
+    vim.lsp.config("typos_lsp", {
         on_attach = on_attach,
     })
 end
-
 -- lspconfig.foam_ls.setup({
 --     on_attach = on_attach,
 -- })
 
-lspconfig.bashls.setup({
-	on_attach = on_attach,
-})

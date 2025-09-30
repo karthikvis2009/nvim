@@ -18,11 +18,6 @@ vim.keymap.set('n', '<C-Down>', ':bn<CR>', opts)
 vim.keymap.set('n', '<C-Up>', ':bp<CR>', opts)
 vim.keymap.set('n', '<C-d>', ':bd<CR>', opts)
 
--- NerdTree
--- vim.keymap.set('n', '<C-f>', ':NERDTreeFocus<CR>', opts)
--- vim.keymap.set('n', '<C-n>', ':NERDTree<CR>', opts)
--- vim.keymap.set('n', '<C-0>', ':NERDTree ~<CR>', opts)
--- vim.keymap.set('n', '<C-t>', ':NERDTreeToggle<CR>', opts)
 -- Neotree
 vim.keymap.set('n', '<C-t>', ':Neotree toggle<CR>', opts)
 
@@ -90,6 +85,4 @@ vim.keymap.set('n', '<space>gg', ':lua require("neogit").open({ kind = "vsplit"}
 
 -- Disable clangd
 vim.keymap.set('n', ',,', '<esc>:LspStop clangd<CR>', opts)
-
-
 

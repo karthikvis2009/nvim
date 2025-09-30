@@ -11,35 +11,36 @@ end
 -- ✨ Dictionary for controlDict
 local function controlDict_completions()
   -- List of all applications
-  local applications = {
-    "acousticFoam", "adjointOptimisationFoam", "adjointShapeOptimizationFoam", "blockMesh",
-    "boundaryFoam", "buoyantBoussinesqPimpleFoam", "buoyantBoussinesqSimpleFoam",
-    "buoyantPimpleFoam", "buoyantSimpleFoam", "cavitatingFoam", "checkMesh", "chemFoam",
-    "chtMultiRegionFoam", "chtMultiRegionSimpleFoam", "chtMultiRegionTwoPhaseEulerFoam",
-    "coalChemistryFoam", "coldEngineFoam", "compressibleInterDyMFoam", "compressibleInterFoam",
-    "compressibleInterIsoFoam", "compressibleMultiphaseInterFoam", "decomposePar", "dnsFoam",
-    "DPMFoam", "driftFluxFoam", "dsmcFoam", "electrostaticFoam", "extrudeMesh", "financialFoam",
-    "fireFoam", "foamyHexMesh", "foamyQuadMesh", "icoFoam", "icoReactingMultiphaseInterFoam",
-    "icoUncoupledKinematicParcelDyMFoam", "icoUncoupledKinematicParcelFoam",
-    "interCondensatingEvaporatingFoam", "interFoam", "interIsoFoam", "interMixingFoam",
-    "interPhaseChangeDyMFoam", "interPhaseChangeFoam", "kinematicParcelFoam", "laplacianFoam",
-    "liquidFilmFoam", "mdEquilibrationFoam", "mdFoam", "mhdFoam", "moveDynamicMesh",
-    "MPPICDyMFoam", "MPPICFoam", "MPPICInterFoam", "multiphaseEulerFoam", "multiphaseInterFoam",
-    "nonNewtonianIcoFoam", "overBuoyantPimpleDyMFoam", "overCompressibleInterDyMFoam",
-    "overInterDyMFoam", "overInterPhaseChangeDyMFoam", "overLaplacianDyMFoam", "overPimpleDyMFoam",
-    "overPotentialFoam", "overRhoPimpleDyMFoam", "overRhoSimpleFoam", "overSimpleFoam",
-    "PDRblockMesh", "PDRFoam", "pimpleFoam", "pisoFoam", "porousSimpleFoam", "potentialFoam",
-    "potentialFreeSurfaceDyMFoam", "potentialFreeSurfaceFoam", "reactingFoam",
-    "reactingHeterogenousParcelFoam", "reactingMultiphaseEulerFoam", "reactingParcelFoam",
-    "reactingTwoPhaseEulerFoam", "refineMesh", "rhoCentralFoam", "rhoPimpleAdiabaticFoam",
-    "rhoPimpleFoam", "rhoPorousSimpleFoam", "rhoReactingFoam", "rhoSimpleFoam",
-    "scalarTransportFoam", "shallowWaterFoam", "simpleFoam", "simpleReactingParcelFoam",
-    "snappyHexMesh", "solidDisplacementFoam", "solidEquilibriumDisplacementFoam", "solidFoam",
-    "sonicDyMFoam", "sonicFoam", "sonicLiquidFoam", "sphereSurfactantFoam", "sprayFoam",
-    "SRFPimpleFoam", "SRFSimpleFoam", "stitchMesh", "subsetMesh", "surfactantFoam",
-    "twoLiquidMixingFoam", "twoPhaseEulerFoam", "uncoupledKinematicParcelDyMFoam", "XiDyMFoam",
-    "XiEngineFoam", "XiFoam",
-  }
+  -- local applications = {
+  --   "acousticFoam", "adjointOptimisationFoam", "adjointShapeOptimizationFoam", "blockMesh",
+  --   "boundaryFoam", "buoyantBoussinesqPimpleFoam", "buoyantBoussinesqSimpleFoam",
+  --   "buoyantPimpleFoam", "buoyantSimpleFoam", "cavitatingFoam", "checkMesh", "chemFoam",
+  --   "chtMultiRegionFoam", "chtMultiRegionSimpleFoam", "chtMultiRegionTwoPhaseEulerFoam",
+  --   "coalChemistryFoam", "coldEngineFoam", "compressibleInterDyMFoam", "compressibleInterFoam",
+  --   "compressibleInterIsoFoam", "compressibleMultiphaseInterFoam", "decomposePar", "dnsFoam",
+  --   "DPMFoam", "driftFluxFoam", "dsmcFoam", "electrostaticFoam", "extrudeMesh", "financialFoam",
+  --   "fireFoam", "foamyHexMesh", "foamyQuadMesh", "icoFoam", "icoReactingMultiphaseInterFoam",
+  --   "icoUncoupledKinematicParcelDyMFoam", "icoUncoupledKinematicParcelFoam",
+  --   "interCondensatingEvaporatingFoam", "interFoam", "interIsoFoam", "interMixingFoam",
+  --   "interPhaseChangeDyMFoam", "interPhaseChangeFoam", "kinematicParcelFoam", "laplacianFoam",
+  --   "liquidFilmFoam", "mdEquilibrationFoam", "mdFoam", "mhdFoam", "moveDynamicMesh",
+  --   "MPPICDyMFoam", "MPPICFoam", "MPPICInterFoam", "multiphaseEulerFoam", "multiphaseInterFoam",
+  --   "nonNewtonianIcoFoam", "overBuoyantPimpleDyMFoam", "overCompressibleInterDyMFoam",
+  --   "overInterDyMFoam", "overInterPhaseChangeDyMFoam", "overLaplacianDyMFoam", "overPimpleDyMFoam",
+  --   "overPotentialFoam", "overRhoPimpleDyMFoam", "overRhoSimpleFoam", "overSimpleFoam",
+  --   "PDRblockMesh", "PDRFoam", "pimpleFoam", "pisoFoam", "porousSimpleFoam", "potentialFoam",
+  --   "potentialFreeSurfaceDyMFoam", "potentialFreeSurfaceFoam", "reactingFoam",
+  --   "reactingHeterogenousParcelFoam", "reactingMultiphaseEulerFoam", "reactingParcelFoam",
+  --   "reactingTwoPhaseEulerFoam", "refineMesh", "rhoCentralFoam", "rhoPimpleAdiabaticFoam",
+  --   "rhoPimpleFoam", "rhoPorousSimpleFoam", "rhoReactingFoam", "rhoSimpleFoam",
+  --   "scalarTransportFoam", "shallowWaterFoam", "simpleFoam", "simpleReactingParcelFoam",
+  --   "snappyHexMesh", "solidDisplacementFoam", "solidEquilibriumDisplacementFoam", "solidFoam",
+  --   "sonicDyMFoam", "sonicFoam", "sonicLiquidFoam", "sphereSurfactantFoam", "sprayFoam",
+  --   "SRFPimpleFoam", "SRFSimpleFoam", "stitchMesh", "subsetMesh", "surfactantFoam",
+  --   "twoLiquidMixingFoam", "twoPhaseEulerFoam", "uncoupledKinematicParcelDyMFoam", "XiDyMFoam",
+  --   "XiEngineFoam", "XiFoam",
+  -- }
+  local applications = require("OpenFOAM_CMP_List.controlDict").application
 
   local application_items = {}
   for _, app in ipairs(applications) do
@@ -49,25 +50,29 @@ local function controlDict_completions()
     })
   end
 
-  local start_from_items = {
-    { label = "latestTime", kind = vim.lsp.protocol.CompletionItemKind.EnumMember },
-    { label = "startTime", kind = vim.lsp.protocol.CompletionItemKind.EnumMember },
-  }
+  -- local start_from_items = {
+  --   { label = "latestTime", kind = vim.lsp.protocol.CompletionItemKind.EnumMember },
+  --   { label = "startTime", kind = vim.lsp.protocol.CompletionItemKind.EnumMember },
+  -- }
 
-  local write_control_items = {
-    { label = "adjustable", kind = vim.lsp.protocol.CompletionItemKind.EnumMember },
-    { label = "timeStep", kind = vim.lsp.protocol.CompletionItemKind.EnumMember },
-    { label = "writeTime", kind = vim.lsp.protocol.CompletionItemKind.EnumMember },
-    { label = "endTime", kind = vim.lsp.protocol.CompletionItemKind.EnumMember },
-    { label = "runTime", kind = vim.lsp.protocol.CompletionItemKind.EnumMember },
-    { label = "onEnd", kind = vim.lsp.protocol.CompletionItemKind.EnumMember },
-  }
+  -- local write_control_items = {
+  --   { label = "adjustable", kind = vim.lsp.protocol.CompletionItemKind.EnumMember },
+  --   { label = "timeStep", kind = vim.lsp.protocol.CompletionItemKind.EnumMember },
+  --   { label = "writeTime", kind = vim.lsp.protocol.CompletionItemKind.EnumMember },
+  --   { label = "endTime", kind = vim.lsp.protocol.CompletionItemKind.EnumMember },
+  --   { label = "runTime", kind = vim.lsp.protocol.CompletionItemKind.EnumMember },
+  --   { label = "onEnd", kind = vim.lsp.protocol.CompletionItemKind.EnumMember },
+  -- }
 
-  return {
-    application = application_items,
-    startFrom = start_from_items,
-    writeControl = write_control_items,
-  }
+  -- return {
+  --   application = application_items,
+  --   startFrom = start_from_items,
+  --   writeControl = write_control_items,
+  -- }
+
+  local controlDictcmp = require("OpenFOAM_CMP_List.controlDict")
+
+  return controlDictcmp
 end
 
 -- ✨ Dictionary for U (velocity)
